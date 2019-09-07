@@ -395,7 +395,8 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
-    libstdc++.vendor
+    libstdc++.vendor \
+    libwui
 
 # Vibrator
 PRODUCT_PACKAGES += \
