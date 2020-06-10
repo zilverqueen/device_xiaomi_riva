@@ -40,6 +40,8 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
 
 BUILD_BROKEN_DUP_RULES := true
+TARGET_EXFAT_DRIVER		:= sdfat
+
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -129,6 +131,9 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CONFIG := riva_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8917
 TARGET_COMPILE_WITH_MSM_KERNEL	:= true
+ifneq ($(wildcard vendor/qcom/proprietary/llvm-arm-toolchain-ship/10.0),)
+TARGET_KERNEL_CLANG_PATH := $(PWD)/vendor/qcom/proprietary/llvm-arm-toolchain-ship/10.0
+endif
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
