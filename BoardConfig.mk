@@ -133,11 +133,6 @@ TARGET_COMPILE_WITH_MSM_KERNEL	:= true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /vendor/lib64/liblbs_core.so|libloc_shim.so \
-    /vendor/lib64/libloc_api_v02.so|libloc_shim.so
-
 # Lineage Hardware
 JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(DEVICE_PATH)/lineagehw|**/*.java
 
