@@ -41,7 +41,11 @@ TARGET_VENDOR_PRODUCT_NAME := riva
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="riva" \
-    PRODUCT_NAME="riva" \
-    PRIVATE_BUILD_DESC="riva-user 7.1.2 N2G47H V9.5.6.0.NCKMIFA release-keys"
+    PRIVATE_BUILD_DESC="coral-user 11 RP1A.200720.009 6720564 release-keys" \
+    PRODUCT_NAME="riva"
 
-BUILD_FINGERPRINT := Xiaomi/riva/riva:7.1.2/N2G47H/V9.5.6.0.NCKMIFA:user/release-keys
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
+BUILD_FINGERPRINT := google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
