@@ -113,25 +113,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_rotator_split=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.perf_hint_window=50 \
+    vendor.gralloc.disable_ahardware_buffer=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
     sys.display-size=1920x1080
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.qcom_parser=4176895 \
     media.stagefright.audio.sink=280 \
-    debug.stagefright.omx_default_rank.sw-audio=1 \
     debug.stagefright.omx_default_rank=0 \
     vendor.vidc.disable.split.mode=1 \
     vendor.vidc.enc.disable_bframes=1 \
     vendor.vidc.enc.disable_pframes=1 \
     vendor.vidc.enc.disable.pq=true \
     vendor.vidc.enc.narrow.searchrange=1
+
+# Memory optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    ro.vendor.qti.sys.fw.bservice_limit=5 \
+    ro.vendor.qti.sys.fw.bservice_age=5000
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -142,7 +149,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.radio.multisim.config=dsds \
-    ro.telephony.default_network=9,1 \
+    ro.telephony.default_network=22,22 \
     ro.telephony.call_ring.multiple=false \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
@@ -157,6 +164,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.usb.config.extra=none
 
+# VSync for CPU rendered app
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    debug.cpurend.vsync=false
+
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+# Zygote preforking
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true

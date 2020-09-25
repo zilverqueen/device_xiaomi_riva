@@ -17,4 +17,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_riva.mk
 
 COMMON_LUNCH_CHOICES := \
-     aosp_riva-userdebug
+    aosp_riva-user \
+    aosp_riva-userdebug \
+    aosp_riva-eng
