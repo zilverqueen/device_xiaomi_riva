@@ -20,8 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
-# Inherit some common Aosp stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common bootleg stuff
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
 # Product spec
 TARGET_BOOT_ANIMATION_RES := 720
@@ -33,7 +33,7 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := riva
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Redmi 5A
-PRODUCT_NAME := aosp_riva
+PRODUCT_NAME := bootleg_riva
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -43,6 +43,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="riva" \
     PRIVATE_BUILD_DESC="coral-user 11 RP1A.200720.009 6720564 release-keys" \
     PRODUCT_NAME="riva"
+
+# Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bootleg.maintainer=tatanstfu
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys
