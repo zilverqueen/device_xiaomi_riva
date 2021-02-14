@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_riva.mk
+    $(LOCAL_DIR)/fluid_riva.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_riva-user \
-    aosp_riva-userdebug \
-    aosp_riva-eng
+    fluid_riva-user \
+    fluid_riva-userdebug \
+    fluid_riva-eng
