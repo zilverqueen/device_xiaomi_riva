@@ -124,7 +124,9 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libqdMetaData.system \
     libtinyxml \
-    memtrack.msm8937
+    memtrack.msm8937 \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -173,8 +175,8 @@ PRODUCT_PACKAGES += \
     libwifi-hal-ctrl
 
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.0-impl-qti \
-    android.hardware.gnss@2.0-service-qti
+    android.hardware.gnss@2.1-impl-qti \
+    android.hardware.gnss@2.1-service-qti
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
@@ -261,7 +263,8 @@ PRODUCT_PACKAGES += \
     libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    libavservices_minijail.vendor
 
 # Perf
 PRODUCT_COPY_FILES += \
@@ -438,6 +441,15 @@ PRODUCT_PACKAGES += \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Wi-Fi Display
+PRODUCT_PACKAGES += \
+    libnl \
+    libqdMetaData \
+    libqdMetaData.vendor
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
