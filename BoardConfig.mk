@@ -135,6 +135,9 @@ ifneq ($(wildcard vendor/qcom/proprietary/llvm-arm-toolchain-ship/10.0),)
 TARGET_KERNEL_CLANG_PATH := $(PWD)/vendor/qcom/proprietary/llvm-arm-toolchain-ship/10.0
 endif
 
+# Keystore
+TARGET_KEYMASTER_WAIT_FOR_QSEE := false
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
